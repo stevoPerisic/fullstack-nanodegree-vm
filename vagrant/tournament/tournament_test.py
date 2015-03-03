@@ -127,8 +127,8 @@ def testPairings():
 
 if __name__ == '__main__':
     testDeleteMatches()
-    # testDelete()
-    # testCount()
+    testDelete()
+    testCount()
     # testRegister()
     # testRegisterCountDelete()
     # testStandingsBeforeMatches()
