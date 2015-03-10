@@ -11,41 +11,42 @@ CREATE DATABASE tournament;
 \c tournament;
 
 CREATE TABLE Players (
-	id SERIAL PRIMARY KEY,
-	name varchar(40)  
+	name TEXT ,
+	id SERIAL PRIMARY KEY
 );
 
 CREATE TABLE Matches (
 	id SERIAL PRIMARY KEY,
-	p1 varchar(40),
-	p2 varchar(40),
-	winner integer REFERENCES Players(id)
+	p1 TEXT,
+	p2 TEXT,
+	winner INTEGER REFERENCES Players(id)
 );
 
-INSERT INTO Players (name) VALUES ('Stevo'), ('Bojana');
+INSERT INTO Players (name) VALUES ('Stevo'), ('Bojana'), ('Lana'), ('Dukara');
 
 INSERT INTO Matches (p1, p2, winner) 
-VALUES ('Stevo', 'Bojana', 2), ('Bojana', 'Stevo', 1),('Stevo', 'Bojana', 1);
+VALUES	('Stevo', 'Bojana', 2), 
+		('Lana', 'Dukara', 3),
+		('Bojana', 'Lana', 3),
+		('Stevo', 'Dukara', 4);
 
-CREATE VIEW getAllMatches_byPlayer AS
-	SELECT name, count(*) as matches_played
-	FROM Players
-	LEFT JOIN Matches 
-	ON Players.name = Matches.p1 OR Players.name = Matches.p2
-	GROUP BY Players.name;
+CREATE VIEW getMatches_byPlayer AS
+SELECT players.id, players.name,
+(select count(*) from matches where players.name in (p1, p2)) as matches_played
+FROM players
+ORDER BY players.id;
 
 CREATE VIEW getAllWins_byPlayer AS
-	SELECT name, count(*) as wins
-	FROM Players
-	LEFT JOIN Matches 
-	ON Players.id = Matches.winner
-	GROUP BY Players.name;
+SELECT players.id, players.name,
+(select count(*) from matches where matches.winner = players.id) as matches_won
+FROM players
+ORDER BY matches_won DESC;
 
-CREATE VIEW getStandings AS
-	SELECT name, count(*) as wins
-	FROM Players
-	LEFT JOIN Matches 
-	ON Players.id = Matches.winner
-	GROUP BY Players.name
-	ORDER BY wins DESC;
+-- get leaderboard :) finally
+create view leaderboard as
+select players.id, players.name, v2.matches_won, v1.matches_played from players 
+left join (select * from getMatches_byPlayer) as v1 on players.id = v1.id 
+left join (select * from getAllWins_byPlayer) as v2 on players.id = v2.id
+order by v2.matches_won desc;
+
 

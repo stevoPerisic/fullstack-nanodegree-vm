@@ -129,11 +129,11 @@ if __name__ == '__main__':
     testDeleteMatches()
     testDelete()
     testCount()
-    # testRegister()
-    # testRegisterCountDelete()
-    # testStandingsBeforeMatches()
-    # testReportMatches()
-    # testPairings()
+    testRegister()
+    testRegisterCountDelete()
+    testStandingsBeforeMatches()
+    testReportMatches()
+    testPairings()
     print "Success!  All tests pass!"
 
 
