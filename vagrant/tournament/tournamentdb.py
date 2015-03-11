@@ -20,7 +20,11 @@ def deleteAll(table):
     db.close()
 
 def fetchAll(table):
-    """Gets the db cursor and returns all data from table given as argument."""
+    """Gets the db cursor and returns all data from table given as argument.
+
+    Args:
+      table:  table name, string
+    """
     db = connect()
     c = db.cursor()
     c.execute("""SELECT * FROM """+table)
@@ -50,8 +54,10 @@ def insertRecord(table, columns, data):
 
 def getById(table, id):
     """Gets the db cursor and returns one row by id from table given as argument
-    table -> string
-    id -> integer
+    
+    Args:
+      table:  table name, string
+      id:  the id number of the desired row from the table
     """
     db = connect()
     c = db.cursor()
