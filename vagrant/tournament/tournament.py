@@ -3,7 +3,13 @@
 # tournament.py -- implementation of a Swiss-system tournament
 #
 
-import random
+# import our database CRUD module tournamentdb.py
+# it exposes some common database interaction classes:
+# deleteAll()
+# fetchAll()
+# insertRecord()
+# getById()
+#
 import tournamentdb as db
 
 # Tournament classes

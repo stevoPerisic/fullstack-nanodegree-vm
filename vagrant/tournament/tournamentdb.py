@@ -12,7 +12,11 @@ def connect():
     return psycopg2.connect("dbname=tournament")
 
 def deleteAll(table):
-    """Gets the db cursor and deletes all data from table given as argument."""
+    """Gets the db cursor and deletes all data from table given as argument.
+    
+    Args:
+      table:  table name, string
+    """
     db = connect()
     c = db.cursor()
     c.execute("""DELETE FROM """+table+""" *""")
