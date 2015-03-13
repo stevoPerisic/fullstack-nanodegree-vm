@@ -1,7 +1,5 @@
 ## Project 2 - Swiss Tournament Planner
 
--------------------------
-
 This is a Python module that uses the PostgreSQL database to keep track
 of players and matches in a game tournament.
 
@@ -10,7 +8,6 @@ each round: players are not eliminated, and each player should be paired with an
 
 This project has two parts: defining the database schema (SQL table definitions), and writing the code that will use it.
 
--------------------------
 
 ## Requirements
 <ul>
