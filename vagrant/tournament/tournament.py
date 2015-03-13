@@ -10,20 +10,20 @@
 # insertRecord()
 # getById()
 #
-import tournamentdb as db
+from tournamentdb import *
 
 # Tournament classes
 def deleteMatches():
     """Remove all the match records from the database."""
-    db.deleteAll("matches")
+    deleteAll("matches")
 
 def deletePlayers():
     """Remove all the player records from the database."""
-    db.deleteAll("players")
+    deleteAll("players")
 
 def countPlayers():
     """Returns the number of players currently registered."""
-    players = db.fetchAll("players")
+    players = fetchAll("players")
     return len(players)
 
 def registerPlayer(name):
@@ -35,7 +35,7 @@ def registerPlayer(name):
     Args:
       name: the player's full name (need not be unique).
     """
-    db.insertRecord('players', ['name'], (name, ))
+    insertRecord('players', ['name'], (name, ))
 
 def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
@@ -50,7 +50,7 @@ def playerStandings():
         wins: the number of matches the player has won
         matches: the number of matches the player has played
     """
-    playerStandings = db.fetchAll("leaderboard")
+    playerStandings = fetchAll("leaderboard")
     return playerStandings
 
 def reportMatch(winner, loser):
@@ -60,9 +60,9 @@ def reportMatch(winner, loser):
       winner:  the id number of the player who won
       loser:  the id number of the player who lost
     """
-    p1 = db.getById("players", winner)
-    p2 = db.getById("players", loser)
-    db.insertRecord('matches', ['p1', 'p2', 'winner'], (p1[0], p2[0], winner,))
+    p1 = getById("players", winner)
+    p2 = getById("players", loser)
+    insertRecord('matches', ['p1', 'p2', 'winner'], (p1[0], p2[0], winner,))
  
 def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
