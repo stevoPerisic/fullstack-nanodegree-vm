@@ -1,4 +1,4 @@
-/vagrant/forum
+vagrant/forum
 *.vagrant
 *.pyc
 _selects.sql
