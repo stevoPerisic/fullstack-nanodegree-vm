@@ -22,7 +22,7 @@ alert(s);
 
 
 ## Installation and running
-<ol>
+<ul>
 	<li>Clone this repository and cd into it.</li>
 	<li>Run <code>vagrant up</code> to start the VM</li>
 	<li>Log into the VM using <code>vagrant ssh</code></li>
@@ -32,7 +32,7 @@ alert(s);
 	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
 		This should be your output:<br/>
 	</li>
-</ol>
+</ul>
 ```
 vagrant=> \i tournament.sql
 CREATE DATABASE
@@ -44,11 +44,11 @@ CREATE VIEW
 CREATE VIEW
 tournament=>
 ```
-<ol>
+<ul>
 	<li>Quit the psql prompt with <code>\q</code></li>
 	<li>Run <code>python tournament_test.py</code></li>
 	<li>All the tests should be passing</li>
-</ol>
+</ul>
 
 
 
