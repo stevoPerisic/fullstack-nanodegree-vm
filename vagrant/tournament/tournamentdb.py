@@ -49,8 +49,19 @@ def insertRecord(table, columns, data):
     c = db.cursor()
 
     i = 0
+    rowID = None
+
     for col in data:
-        c.execute('INSERT INTO '+table+' ('+columns[i]+') VALUES (%s)', (col,))
+        # here we make sure to update the correct row
+        if rowID != None:
+            c.execute('UPDATE '+table+' SET '+columns[i]+'=%s WHERE id=%s', (col, rowID,))
+        else:
+            c.execute('INSERT INTO '+table+' ('+columns[i]+') VALUES (%s)', (col,))
+
+        if i == 0:
+            c.execute('SELECT max(id) FROM '+table)
+            rowID = c.fetchone()[0]
+
         i = i+1
 
     db.commit()
