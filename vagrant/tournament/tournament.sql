@@ -46,7 +46,7 @@ SELECT players.id, players.name,
 FROM players
 ORDER BY players.id;
 
--- view that gices us all the matches won by players, sorted by most wins
+-- view that gives us all the matches won by players, sorted by most wins
 -- example:
 --  id |     name     | matches_won 
 -- ----+--------------+-------------
