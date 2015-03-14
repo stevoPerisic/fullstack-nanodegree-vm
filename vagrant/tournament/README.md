@@ -21,6 +21,23 @@ with another player with the same number of wins, or as close as possible.
 	<li>Run <code>vagrant up</code> to start the VM</li>
 	<li>Log into the VM using <code>vagrant ssh</code></li>
 	<li>Change your directory to /vagrant/tournament/</li>
+	<li>Start a psql prompt with <code>psql</code></li>
+	<li>You should be connected to the vagrant database</li>
+	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
+		This should be your output:<br/>
+		<code>
+			vagrant=> \i tournament.sql
+			CREATE DATABASE
+			You are now connected to database "tournament" as user "vagrant".
+			CREATE TABLE
+			CREATE TABLE
+			CREATE VIEW
+			CREATE VIEW
+			CREATE VIEW
+			tournament=>
+		</code>
+	</li>
+	<li>Quit the psql prompt with <code>\q</code></li>
 	<li>Run <code>python tournament_test.py</code></li>
 	<li>All the tests should be passing</li>
 </ol>

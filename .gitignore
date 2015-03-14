@@ -1,5 +1,7 @@
 /vagrant/forum
 /vagrant/forum/*
+/vagrant/tournament_extraCredit
+/vagrant/tournament_extraCredit/*
 *.vagrant
 *.pyc
 _selects.sql
