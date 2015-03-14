@@ -14,6 +14,11 @@ with another player with the same number of wins, or as close as possible.
 	<li>Python 2.7.9 or later</li>
 </ul>
 
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
 
 ## Installation and running
 <ol>
