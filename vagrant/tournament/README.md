@@ -25,7 +25,7 @@ with another player with the same number of wins, or as close as possible.
 	<li>You should be connected to the vagrant database</li>
 	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
 		This should be your output:<br/>
-		<code>
+		<code width="400px">
 			vagrant=> \i tournament.sql<br/><br/>
 			CREATE DATABASE<br/>
 			You are now connected to database "tournament" as user "vagrant".<br/>
