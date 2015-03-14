@@ -19,7 +19,7 @@ def deleteAll(table):
     """
     db = connect()
     c = db.cursor()
-    c.execute("""DELETE FROM """+table+""" *""")
+    c.execute('DELETE FROM '+table+' *')
     db.commit()
     db.close()
 
@@ -31,7 +31,7 @@ def fetchAll(table):
     """
     db = connect()
     c = db.cursor()
-    c.execute("""SELECT * FROM """+table)
+    c.execute('SELECT * FROM '+table)
     data = c.fetchall()
     db.close()
     return data
@@ -76,7 +76,7 @@ def getById(table, id):
     """
     db = connect()
     c = db.cursor()
-    c.execute('SELECT * FROM players WHERE players.id = %s', (id, ))
+    c.execute('SELECT * FROM '+table+' WHERE players.id = %s', (id, ))
     row = c.fetchone()
     db.close()
     return row
