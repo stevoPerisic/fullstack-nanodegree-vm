@@ -31,15 +31,15 @@ alert(s);
 	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
 		This should be your output:<br/>
 		```
-			vagrant=> \i tournament.sql
-			CREATE DATABASE
-			You are now connected to database "tournament" as user "vagrant".
-			CREATE TABLE
-			CREATE TABLE
-			CREATE VIEW
-			CREATE VIEW
-			CREATE VIEW
-			tournament=>
+		vagrant=> \i tournament.sql
+		CREATE DATABASE
+		You are now connected to database "tournament" as user "vagrant".
+		CREATE TABLE
+		CREATE TABLE
+		CREATE VIEW
+		CREATE VIEW
+		CREATE VIEW
+		tournament=>
 		```
 	</li>
 	<li>Quit the psql prompt with <code>\q</code></li>
