@@ -19,6 +19,17 @@ var s = "JavaScript syntax highlighting";
 alert(s);
 ```
 
+```
+vagrant=> \i tournament.sql
+CREATE DATABASE
+You are now connected to database "tournament" as user "vagrant".
+CREATE TABLE
+CREATE TABLE
+CREATE VIEW
+CREATE VIEW
+CREATE VIEW
+tournament=>
+```
 
 ## Installation and running
 <ol>
@@ -30,17 +41,7 @@ alert(s);
 	<li>You should be connected to the vagrant database</li>
 	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
 		This should be your output:<br/>
-		```
-		vagrant=> \i tournament.sql
-		CREATE DATABASE
-		You are now connected to database "tournament" as user "vagrant".
-		CREATE TABLE
-		CREATE TABLE
-		CREATE VIEW
-		CREATE VIEW
-		CREATE VIEW
-		tournament=>
-		```
+
 	</li>
 	<li>Quit the psql prompt with <code>\q</code></li>
 	<li>Run <code>python tournament_test.py</code></li>
