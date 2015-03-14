@@ -25,17 +25,17 @@ with another player with the same number of wins, or as close as possible.
 	<li>You should be connected to the vagrant database</li>
 	<li>Install the tournament database with <code>\i tournament.sql</code><br/>
 		This should be your output:<br/>
-		<code width="400px">
-			vagrant=> \i tournament.sql<br/><br/>
-			CREATE DATABASE<br/>
-			You are now connected to database "tournament" as user "vagrant".<br/>
-			CREATE TABLE<br/>
-			CREATE TABLE<br/>
-			CREATE VIEW<br/>
-			CREATE VIEW<br/>
-			CREATE VIEW<br/>
-			tournament=><br/>
-		</code>
+		```
+			vagrant=> \i tournament.sql
+			CREATE DATABASE
+			You are now connected to database "tournament" as user "vagrant".
+			CREATE TABLE
+			CREATE TABLE
+			CREATE VIEW
+			CREATE VIEW
+			CREATE VIEW
+			tournament=>
+		```
 	</li>
 	<li>Quit the psql prompt with <code>\q</code></li>
 	<li>Run <code>python tournament_test.py</code></li>
