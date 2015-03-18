@@ -2,6 +2,9 @@
 /vagrant/forum/*
 /vagrant/tournament_extraCredit
 /vagrant/tournament_extraCredit/*
+/vagrant/templates
+/vagrant/templates/*
+index.py
 *.vagrant
 *.pyc
 _selects.sql
