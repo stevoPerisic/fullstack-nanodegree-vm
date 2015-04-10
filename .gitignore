@@ -4,6 +4,8 @@
 /vagrant/tournament_extraCredit/*
 /vagrant/templates
 /vagrant/templates/*
+/vagrant/Full-Stack-Foundations/
+/vagrant/Full-Stack-Foundations/
 index.py
 *.vagrant
 *.pyc
