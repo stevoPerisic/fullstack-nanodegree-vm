@@ -17,7 +17,7 @@ You will deliver a RESTful web application using the Python framework Flask alon
   * Update the new item form to correctly process the inclusion of item images
 4. CRUD: Update
   * Include a function to edit/update a current record in teh database table and corrcetly processed submitted forms
-  * Update the dit/update form to correctly process the inclusion of item images
+  * Update the edit/update form to correctly process the inclusion of item images
 5. CRUD: Delete
   * Page includes a function to delete a current record
   * research and implement this function using POST requests and nonces to prevent cross-site request forgeries (CSFR)
