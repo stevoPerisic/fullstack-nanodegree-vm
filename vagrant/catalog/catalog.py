@@ -25,6 +25,9 @@ def newRental():
 		location
 		price_day
 		days_available
+		num_rooms
+		num_bathrooms
+		pets_welcome
 		description
 		image
 
@@ -40,6 +43,11 @@ def newRental():
 def showRentals():
 	"""Returns all the rental listings from the database."""
 	return "This page is for viewing of rental properties."
+
+@app.route("/rentals/<string:location>/")
+def showRentalsIn(location):
+	"""Returns all the rental properties in a given location."""
+	return "This page is for viewing all the rentals in: %s" % location
 
 # sort rentals by:
 # 1) recently added
