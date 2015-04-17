@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+</head>
+<body>
+	<div id="signinButton">
+		<!-- data-approvalprompt="force" SHOULD BE DISABLED IN PRODUCTION -->
+		<span class="g-signin" 
+		data-scope="openid" 
+		data-clientid="212391900626-geuit1t88qh41lo9rrkd5llr5kmo5vki.apps.googleusercontent.com" 
+		data-redirecturi="postmessage" 
+		data-accesstype="offline" 
+		data-cookiepolicy="single_host_origin" 
+		data-callback="signInCallback" 
+		data-approvalprompt="force"
+	></span>
+	</div>
+	<div id="result"></div>
+
+	<script type="text/javascript">
+		function signInCallback (authResult) {
+			// ...
+			if (authResult['code']){
+				// Hide the sign in button now that the user is authorized
+				$('#signinButton').attr('style', 'display: none');
+				// Send the onetime use code to the server, if the server responds, write a 
+				// 'login successful' message to the web page and then redirect back to the
+				// main restaurants page
+				$.ajax({
+					url: '/gconnect?state={{STATE}}',
+					type: 'POST',
+					processData: false, // don't want jQuery tp process the response as a string
+					contentType: 'appication/octet-stream; charset=utf-8',
+					data: authResult['code'],
+				})
+				.done(function(result) {
+					console.log(result);
+					if(result){
+						$('#result').html("Login Successful!</br>"+ result + "</br>Redirecting...");
+						setTimeout(function () {
+							window.location.href = "restaurant";
+						}, 4000);
+					}
+				})
+				.fail(function(error) {
+					console.log(error);
+				})
+				.always(function(jXHR) {
+					console.log(jXHR);
+				});
+				
+			}
+		}
+	</script>
+</body>
+</html>
